@@ -1,40 +1,58 @@
-# Online Retail Sales Analysis
+# Online Retail Sales & Customer Behavior Analysis
 
 ## Business Objective
-To analyze online retail transaction data to identify key revenue drivers, customer purchasing patterns, and sales trends, and translate these insights into actionable strategies to improve revenue growth and customer retention.
+To analyze online retail transaction data in order to identify key revenue drivers, sales trends, and customer purchasing behavior. The goal is to support data-driven decision-making for improving revenue performance and understanding cancellation patterns.
+
+---
 
 ## Dataset Overview
-The dataset contains transactional records from an online retail business. Each row represents a single product-level transaction within an invoice, including purchase date, quantity, pricing, customer, and geographic information.
+The dataset contains transactional-level retail data with the following key fields:
 
-## Data Cleaning & Preprocessing
-- Removed transactions with missing CustomerID to enable accurate customer-level analysis.
-- Excluded transactions with negative quantity or zero unit price as cancellations or returns to avoid revenue distortion.
-- Removed duplicate invoice–product records to ensure correct aggregation of sales data.
+- **Invoice**: Unique identifier for each transaction
+- **InvoiceDate**: Date and time of purchase
+- **CustomerID**: Unique identifier for customers (may contain missing values)
+- **Country**: Country where the transaction occurred
+- **Quantity**: Number of units purchased
+- **UnitPrice**: Price per unit of product
+
+---
+
+## Data Preparation
+- Calculated revenue using quantity and unit price for sales performance analysis
+- Retained cancelled and returned transactions to analyze cancellation behavior
+- Preserved transactions with missing CustomerID to maintain complete transactional flow
+- Checked for duplicate invoice-product records to ensure accurate aggregation
+
+---
 
 ## Feature Engineering
-- Created a revenue metric using quantity and unit price.
-- Derived time-based features (month, year) to analyze seasonality and trends.
-- Built RFM (Recency, Frequency, Monetary) metrics to segment customers based on purchasing behavior.
+- Created revenue-based metrics to evaluate business performance
+- Derived time-based features to analyze sales trends and seasonality
+- Examined invoice-level frequency and recency patterns to understand customer behavior
 
-## Customer Segmentation (RFM Analysis)
-Customers were segmented using the RFM framework to identify high-value, loyal, and low-engagement customers based on recency of purchase, purchase frequency, and total revenue contribution.
+---
+
+## Analysis Performed
+- Identified top revenue-contributing customers and transactions
+- Analyzed cancellation and return patterns to assess operational impact
+- Evaluated sales distribution across countries and time periods
+- Assessed customer purchasing behavior using transactional history
+
+---
 
 ## Key Insights
-- A small percentage of customers contribute the majority of total revenue.
-- Repeat and loyal customers generate significantly higher revenue than one-time buyers.
-- A notable portion of customers shows low engagement, indicating reactivation opportunities.
+- A small percentage of customers contribute a disproportionate share of total revenue
+- Cancelled and returned transactions have a measurable impact on overall revenue
+- Repeat purchasing behavior indicates opportunities for targeted retention strategies
 
-## Business Recommendations
-- Prioritize retention strategies for high-value and loyal customers.
-- Run targeted re-engagement campaigns for inactive customer segments.
-- Allocate marketing resources based on customer segment value rather than uniform distribution.
+---
 
-## Limitations
-- Profitability analysis was not included.
-- Returns and cancellations were excluded from detailed analysis.
-- Customer lifetime value was not calculated.
+## Tools Used
+- Python (Pandas, NumPy)
+- Jupyter Notebook
+- Excel
 
-## Future Improvements
-- Add CLV and cohort analysis.
-- Analyze cancellations and returns separately.
-- Create a business dashboard for stakeholders.
+---
+
+## Conclusion
+This analysis provides insights into revenue concentration, sales behavior, and cancellation impact, helping businesses optimize decision-making related to customer retention and operational efficiency.
